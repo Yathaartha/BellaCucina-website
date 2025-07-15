@@ -10,6 +10,13 @@ import pastaButterGarlic from "./assets/images/pasta-butter-garlic.jpg";
 import dineInService from "./assets/images/dine-in-service.jpeg";
 import takeoutService from "./assets/images/takeout-service.jpeg";
 import cateringService from "./assets/images/catering-service.jpeg";
+import { Routes, Route, Link } from "react-router-dom";
+import About from "./About";
+import Contact from "./Contact";
+import Header from "./Header";
+import Footer from "./Footer";
+import Reservation from "./Reservation";
+import Menu from "./Menu";
 
 const menuHighlights = [
   {
@@ -88,157 +95,112 @@ const testimonials = [
 
 function App() {
   return (
-    <div className="homepage-root">
-      {/* Header & Navigation */}
-      <header className="header">
-        <div className="header-logo">
-          <img src={logo} alt="Bella Cucina Logo" />
-        </div>
-        <nav className="nav">
-          <a href="#home">Home</a>
-          <a href="#about">About Us</a>
-          <a href="#menu">Menu</a>
-          <a href="#contact">Contact</a>
-          <a href="#reservation" className="nav-reservation">
-            Reservation Page
-          </a>
-        </nav>
-      </header>
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <div className="homepage-root">
+            <Header />
 
-      {/* Hero Section */}
-      <section className="hero" id="home">
-        <div className="hero-overlay">
-          <div className="hero-content">
-            <div className="hero-subtitle">GOOD FOOD. GOOD MOOD.</div>
-            <h1 className="hero-title">
-              A Really Good Place to Eat
-              <br />
-              In the City of Agawam
-            </h1>
-            <p className="hero-desc">
-              "Bella Cucina serves authentic Italian cuisine crafted by native
-              chefs, offering a warm, family-friendly, and unforgettable dining
-              experience."
-            </p>
-            <a href="#menu" className="btn btn-primary">
-              EXPLORE OUR MENU
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Reservation Section */}
-      <section className="reservation" id="reservation">
-        <h2>Reservation</h2>
-        <p>
-          Experience authentic Italian dining in the Heart of Agawam. Book your
-          table today — we’ll save you a seat!
-        </p>
-        <a href="#" className="btn btn-secondary">
-          BOOK A TABLE NOW
-        </a>
-        <div className="reservation-phone">
-          <div>Telephone Reservations</div>
-          <div className="reservation-number">(413)-750-9877</div>
-        </div>
-      </section>
-
-      {/* Menu Highlights */}
-      <section className="menu-highlights" id="menu">
-        <h2>
-          <span>Our Menu Highlights</span>
-        </h2>
-        <div className="menu-grid">
-          {menuHighlights.map((item, idx) => (
-            <div className="menu-card" key={idx}>
-              <img src={item.img} alt={item.title} />
-              <div className="menu-card-info">
-                <div className="menu-card-category">{item.category}</div>
-                <div className="menu-card-title">{item.title}</div>
-                <div className="menu-card-price">{item.price}</div>
+            {/* Hero Section */}
+            <section className="hero" id="home">
+              <div className="hero-overlay">
+                <div className="hero-content">
+                  <div className="hero-subtitle">GOOD FOOD. GOOD MOOD.</div>
+                  <h1 className="hero-title">
+                    A Really Good Place to Eat
+                    <br />
+                    In the City of Agawam
+                  </h1>
+                  <p className="hero-desc">
+                    "Bella Cucina serves authentic Italian cuisine crafted by
+                    native chefs, offering a warm, family-friendly, and
+                    unforgettable dining experience."
+                  </p>
+                  <a href="#menu" className="btn btn-primary">
+                    EXPLORE OUR MENU
+                  </a>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </section>
+            </section>
 
-      {/* Services Section */}
-      <section className="services">
-        <h2>Our Services</h2>
-        <div className="services-grid">
-          {services.map((service, idx) => (
-            <div className="service-card" key={idx}>
-              <img src={service.img} alt={service.title} />
-              <div className="service-card-title">{service.title}</div>
-              <div className="service-card-desc">{service.desc}</div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="testimonials">
-        <h2>What Our Customers Say</h2>
-        <div className="testimonials-list">
-          {testimonials.map((t, idx) => (
-            <div className="testimonial-card" key={idx}>
-              <img src={t.img} alt={t.name} className="testimonial-avatar" />
-              <div className="testimonial-name">{t.name}</div>
-              <div className="testimonial-text">{t.text}</div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="footer">
-        <div className="footer-main">
-          <div className="footer-logo">
-            <img src={logo} alt="Bella Cucina Logo" />
-            <div className="footer-desc">
-              "Bella Cucina serves authentic Italian cuisine crafted by native
-              chefs, offering a warm, family-friendly, and unforgettable dining
-              experience."
-            </div>
-          </div>
-          <div className="footer-info">
-            <div className="footer-col">
-              <div className="footer-title">Our Location</div>
-              <div>1422 Main Street, Agawam, MA, 01001</div>
-              <div>(413)-750-9877</div>
-              <a href="#">Get Direction</a>
-            </div>
-            <div className="footer-col">
-              <div className="footer-title">Quick Link</div>
-              <a href="#home">Home</a>
-              <a href="#about">About Us</a>
-              <a href="#menu">Menu</a>
-              <a href="#contact">Contact Us</a>
-            </div>
-            <div className="footer-col">
-              <div className="footer-title">Opening Hours</div>
-              <div>
-                Monday to Thursday
-                <br />
-                11:00 AM - 9:00 PM
+            {/* Reservation Section */}
+            <section className="reservation" id="reservation">
+              <h2>Reservation</h2>
+              <p>
+                Experience authentic Italian dining in the Heart of Agawam. Book
+                your table today — we’ll save you a seat!
+              </p>
+              <Link to="/reservation" className="btn btn-secondary">
+                BOOK A TABLE NOW
+              </Link>
+              <div className="reservation-phone">
+                <div>Telephone Reservations</div>
+                <div className="reservation-number">(413)-750-9877</div>
               </div>
-              <div>
-                Thursday, Friday, Saturday
-                <br />
-                11:00 AM - 9:00 PM
+            </section>
+
+            {/* Menu Highlights */}
+            <section className="menu-highlights" id="menu">
+              <h2>
+                <span>Our Menu Highlights</span>
+              </h2>
+              <div className="menu-grid">
+                {menuHighlights.map((item, idx) => (
+                  <div className="menu-card" key={idx}>
+                    <img src={item.img} alt={item.title} />
+                    <div className="menu-card-info">
+                      <div className="menu-card-category">{item.category}</div>
+                      <div className="menu-card-title">{item.title}</div>
+                      <div className="menu-card-price">{item.price}</div>
+                    </div>
+                  </div>
+                ))}
               </div>
-              <a href="#reservation" className="btn btn-secondary btn-footer">
-                RESERVATION
-              </a>
-            </div>
+            </section>
+
+            {/* Services Section */}
+            <section className="services">
+              <h2>Our Services</h2>
+              <div className="services-grid">
+                {services.map((service, idx) => (
+                  <div className="service-card" key={idx}>
+                    <img src={service.img} alt={service.title} />
+                    <div className="service-card-title">{service.title}</div>
+                    <div className="service-card-desc">{service.desc}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Testimonials Section */}
+            <section className="testimonials">
+              <h2>What Our Customers Say</h2>
+              <div className="testimonials-list">
+                {testimonials.map((t, idx) => (
+                  <div className="testimonial-card" key={idx}>
+                    <img
+                      src={t.img}
+                      alt={t.name}
+                      className="testimonial-avatar"
+                    />
+                    <div className="testimonial-name">{t.name}</div>
+                    <div className="testimonial-text">{t.text}</div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Footer */}
+            <Footer />
           </div>
-        </div>
-        <div className="footer-bottom">
-          <div>Copyright © 2025 Bellacucina</div>
-          <div>Powered by Bellacucina</div>
-        </div>
-      </footer>
-    </div>
+        }
+      />
+      <Route path="/about" element={<About />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/reservation" element={<Reservation />} />
+      <Route path="/menu" element={<Menu />} />
+    </Routes>
   );
 }
 

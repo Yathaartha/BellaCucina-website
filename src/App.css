@@ -71,6 +71,38 @@ body,
   color: #ffd700;
 }
 
+/* Mobile Navigation Styles */
+.mobile-nav {
+  display: none;
+  position: relative;
+}
+
+.desktop-nav {
+  display: flex;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: block;
+  }
+
+  .header {
+    padding: 16px 24px;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .header-logo img {
+    height: 56px;
+  }
+}
+
 .hero {
   position: relative;
   background: url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80")
@@ -155,6 +187,66 @@ body,
 .reservation-phone {
   margin-top: 24px;
   font-size: 1.1rem;
+}
+
+/* Reservation Page Styles */
+.reservation-page {
+  max-width: 800px;
+  margin: 40px auto 0 auto;
+  padding: 0 16px;
+}
+
+.reservation-page h1 {
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.reservation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.reservation-form label {
+  color: #fff;
+  font-weight: 500;
+}
+
+.reservation-form input,
+.reservation-form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 4px;
+  border: none;
+  margin-top: 4px;
+  font-size: 1rem;
+  background: #fff;
+}
+
+.reservation-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.reservation-form button {
+  background: #ffd700;
+  color: #181818;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 4px;
+  padding: 14px 0;
+  margin-top: 8px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  transition: background 0.2s;
+}
+
+.reservation-form button:hover {
+  background: #fff;
 }
 
 .menu-highlights {
@@ -371,7 +463,6 @@ body,
 }
 
 @media (max-width: 900px) {
-  .header,
   .footer-main,
   .footer-bottom {
     flex-direction: column;
@@ -389,6 +480,212 @@ body,
   }
   .testimonials-list {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-nav {
+    display: block;
+  }
+
+  .header {
+    padding: 16px 24px;
+  }
+
+  .header-logo img {
+    height: 56px;
+  }
+
+  /* Hero Section Mobile */
+  .hero {
+    min-height: 300px;
+  }
+
+  .hero-overlay {
+    padding: 40px 0 30px 0;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+    line-height: 1.2;
+  }
+
+  .hero-desc {
+    font-size: 1.1rem;
+  }
+
+  /* Buttons Mobile */
+  .btn {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+
+  /* Reservation Section Mobile */
+  .reservation {
+    padding: 32px 16px 24px 16px;
+  }
+
+  .reservation h2 {
+    font-size: 1.8rem;
+  }
+
+  .reservation-number {
+    font-size: 1.8rem;
+  }
+
+  /* Reservation Page Mobile */
+  .reservation-page {
+    margin: 24px auto 0 auto;
+    padding: 0 16px;
+  }
+
+  .reservation-page h1 {
+    font-size: 2rem;
+    margin-bottom: 24px;
+  }
+
+  .reservation-form {
+    gap: 12px;
+  }
+
+  .reservation-form input,
+  .reservation-form textarea {
+    padding: 10px;
+    font-size: 0.95rem;
+  }
+
+  .reservation-form button {
+    padding: 12px 0;
+    font-size: 1rem;
+  }
+
+  /* Menu Highlights Mobile */
+  .menu-highlights {
+    padding: 32px 0 24px 0;
+  }
+
+  .menu-highlights h2 {
+    font-size: 1.8rem;
+  }
+
+  /* Services Mobile */
+  .services {
+    padding: 32px 0 24px 0;
+  }
+
+  .services h2 {
+    font-size: 1.8rem;
+  }
+
+  /* Testimonials Mobile */
+  .testimonials {
+    padding: 32px 0 24px 0;
+  }
+
+  .testimonials h2 {
+    font-size: 1.8rem;
+  }
+
+  .testimonial-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  /* Footer Mobile */
+  .footer-main {
+    padding: 0 16px 24px 16px;
+  }
+
+  .footer-bottom {
+    padding: 16px;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    align-items: center;
+    text-align: center;
+    margin: auto;
+  }
+
+  .footer-desc {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 12px 16px;
+  }
+
+  .header-logo img {
+    height: 60px;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .reservation h2,
+  .menu-highlights h2,
+  .services h2,
+  .testimonials h2 {
+    font-size: 1.5rem;
+  }
+
+  .reservation-number {
+    font-size: 1.5rem;
+  }
+
+  /* Reservation Page Extra Small Mobile */
+  .reservation-page {
+    margin: 16px auto 0 auto;
+    padding: 0 12px;
+  }
+
+  .reservation-page h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  .reservation-form {
+    gap: 10px;
+  }
+
+  .reservation-form input,
+  .reservation-form textarea {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
+  .reservation-form button {
+    padding: 10px 0;
+    font-size: 0.95rem;
+  }
+
+  .footer-main {
+    padding: 0 12px 20px 12px;
+  }
+
+  .footer-bottom {
+    padding: 12px;
+    font-size: 0.85rem;
+    flex-direction: row;
   }
 }
 
