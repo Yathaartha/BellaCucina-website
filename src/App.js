@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import logo from "./logo.png";
 import chocolateCake from "./assets/images/chocolate-cake.jpg";
 import nyCheeseCake from "./assets/images/ny-cheese-cake.jpg";
 import pannaCota from "./assets/images/panna-cota.jpg";

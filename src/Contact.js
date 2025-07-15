@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import logo from "./logo.png";
 import contactBg from "./assets/images/contact-us-bg-img.jpg";
 import Header from "./Header";
 import Footer from "./Footer";
